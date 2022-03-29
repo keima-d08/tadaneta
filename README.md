@@ -24,6 +24,7 @@
 | type2_id           | integer     |                                   |
 | spoil_id           | integer     |  null: false                      |
 | image              | string      |                                   |
+| user               | references  |  null: false, foreign_key: true   |
 
 ### Association
 - belongs_to :user
@@ -34,6 +35,8 @@
 | Colum              | Type        | Options                           |
 |--------------------|-------------|-----------------------------------|
 | comment            | string      |  null: false                      |
+| post               | references  |  null: false, foreign_key: true   |
+| user               | references  |  null: false, foreign_key: true   |
 
 ### Association
 - belongs_to :user
