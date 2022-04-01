@@ -18,10 +18,10 @@
 | Colum              | Type        | Options                           |
 |--------------------|-------------|-----------------------------------|
 | title              | string      |  null: false                      |
+| product            | string      |  null: false                      |
 | content            | text        |  null: false                      |
 | genre_id           | integer     |  null: false                      |
 | type1_id           | integer     |  null: false                      |
-| type2_id           | integer     |                                   |
 | spoil_id           | integer     |  null: false                      |
 | image              | string      |                                   |
 | user               | references  |  null: false, foreign_key: true   |
