@@ -13,4 +13,12 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+
+  def self.search(search)
+    if search != ""
+      Post.where('title LIKE(?) OR content LIKE(?) OR product LIKE(?)', "%#{search}%","%#{search}%","%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
