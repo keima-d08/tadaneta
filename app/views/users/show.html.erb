@@ -4,6 +4,9 @@
       <h2 class="page-heading">
         <%= @user.nickname%>
       </h2>
+      <div>
+        <%= link_to "編集する",  edit_user_registration_path(@user.id), class: :prototype__btn %>
+      </div>
       <table class="table">
         <tbody>
           <tr>
