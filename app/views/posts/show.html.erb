@@ -28,6 +28,19 @@
         </div>
       </div>
       
+      <%#いいね%>
+      <div>
+      <% if @post.favorited?(current_user) %>
+       <%= link_to post_favorite_path(@post.id), method: :delete do %><%= @post.favorites.count %>
+       <i class="fas fa-heart unlike-btn"></i>
+       <% end %>
+       <% else %>
+         <%= link_to post_favorites_path(@post.id), method: :post do %><%= @post.favorites.count %>
+         <i class="far fa-heart like-btn" ></i>
+        <% end %>
+       <% end %>
+      </div>
+      <%#いいね%>
     
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>

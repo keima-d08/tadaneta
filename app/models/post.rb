@@ -12,7 +12,8 @@ class Post < ApplicationRecord
   validates :spoil_id,    presence: true, numericality: { other_than: 1 } 
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   def self.search(search)
     if search != ""
@@ -21,4 +22,9 @@ class Post < ApplicationRecord
       Post.all
     end
   end
+
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+ end
+ 
 end
