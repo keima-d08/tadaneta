@@ -1,5 +1,7 @@
 <div>
 <% @users.each do |user| %>
-<p><%= user.nickname %></p>
+
+  <p><%= link_to user.nickname,user_path(user.id), class: :prototype__user %></p>
+
 <% end %>
 </div>

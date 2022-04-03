@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :move_to_edit, except: [:index, :show, :search]
   before_action :set_post, only: [:show, :edit, :update]
 
   def index
@@ -26,6 +25,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @post.user.id
+      redirect_to root_path
+    end
   end
 
   def update
@@ -58,12 +60,6 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  def move_to_edit
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
   
 end
