@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/followings'
+  get 'relationships/followers'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'posts#index'
 
@@ -10,6 +12,12 @@ Rails.application.routes.draw do
   end
  end
 
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get :follows, :followers
+    end
+    resource :relationships, only: [:create, :destroy]
+  end
+
   resources :ranks, only: :index
 end

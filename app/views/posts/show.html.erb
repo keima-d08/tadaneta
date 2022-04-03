@@ -29,6 +29,7 @@
       </div>
       
       <%#いいね%>
+      <% if user_signed_in? %>
       <div>
       <% if @post.favorited?(current_user) %>
        <%= link_to post_favorite_path(@post.id), method: :delete do %><%= @post.favorites.count %>
@@ -40,6 +41,7 @@
         <% end %>
        <% end %>
       </div>
+      <% end %>
       <%#いいね%>
     
       <div class="prototype__comments">
@@ -61,7 +63,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.content%>
-              <%= link_to comment.user.name, user_path(comment.user_id), class: :comment_user %>
+              <%= link_to comment.user.nickname, user_path(comment.user_id), class: :comment_user %>
             </li>
           <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
