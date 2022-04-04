@@ -17,6 +17,138 @@ div {
   padding: 0;
 }
 
+/* 追加 */
+.main {
+  background-color: #f6f6f6;
+  border-top:#808080 solid 1px;
+}
+
+article {
+  width: 74%;
+}
+
+aside {
+  width: 22%;
+  background-color: white;
+  margin-top:25px ;
+}
+
+.main_contents {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  background-color: #f6f6f6;
+  padding: 10px;
+}
+
+.post {
+  background-color: white;
+  margin: 25px 5px;
+  padding: 5px;
+}
+
+.title {
+  text-decoration: none;
+  color: #3b4043;
+  
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.inner {
+  width: 1424px;
+  margin: 0 auto
+}
+
+/* ヘッダー */
+
+.header {
+  background-color: aqua;
+  margin-bottom: 48px;
+  height: 30vh;
+  position:relative;
+  border-bottom: #808080 solid 1px;
+}
+
+.icon {
+  font-size: 50px;
+  color: black;
+  }
+
+.logo {
+  position:absolute;
+  bottom: 0px;
+  left: 100px;
+}
+
+.my-page {
+  width:200px ;
+  padding-right: 10px;
+  margin: 0 100px 0 auto;
+  padding-top: 10px;
+  text-align: right;
+}
+
+.head_title {
+  text-align: center;
+  margin:  auto;
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 900;
+  font-size: 40px;
+}
+
+
+.nav {
+  height: 13vh;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  
+}
+.logo {
+  width: 300px;
+}
+
+.nav__left {
+  margin: 5px;
+}
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 5px;
+}
+.nav__btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+.nav__logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+}
+.nav__logout:hover{
+  opacity: 0.5;
+}
+
+
+
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
@@ -36,53 +168,7 @@ a {
   color: #3b4043;
 }
 
-/* ヘッダー */
 
-.header {
-  background-color: #f1f8fe;
-  margin-bottom: 48px;
-  padding: 20px 0;
-
-}
-.inner {
-  width: 1024px;
-  margin: 0 auto;
-}
-.nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.logo {
-  width: 200px;
-}
-.nav__btn{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #87CEFA solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-.nav__btn:hover{
-  color: #fff;
-  background: #87CEFA;
-}
-
-.nav__logout{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
-  text-decoration: none;
-  user-select: none;
-}
-.nav__logout:hover{
-  opacity: 0.5;
-}
 
 /* フォーム周り */
 .form__wrapper{
@@ -132,36 +218,7 @@ a {
   font-size: 30px;
   margin-bottom: 28px;
 }
-.card__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 161px);
-}
-.card {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
-}
-.card__img {
-  margin-bottom: 16px;
-}
-.card__title {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-.card__summary {
-  font-size: 16px;
-}
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-}
+
 
 /* 詳細ページ */
 .prototype__wrapper{
