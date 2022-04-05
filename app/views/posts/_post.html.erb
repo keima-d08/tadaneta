@@ -1,13 +1,21 @@
 <div class="post">
-<div class = "post.date">
-<%= link_to post.user.nickname, user_path(post.user.id), class: :card__user %>
+ <div class="post_content">
+ <div class = "post_date">
+ <%= link_to post.user.nickname, user_path(post.user.id), class:"user" %>
  が<%= post.created_at.strftime('%Y年/%m月/%d日') %>に投稿
-</div>
+ </div>
   <div class="title">
-    <h3><%= link_to post.title, post_path(post.id),class:"title"%></h3>
+    <%= link_to post.title, post_path(post.id),class:"title"%>
     </div>
-    ・<%= post.product %>
-    ・<%= post.genre.name %>
-    ・<%= post.type.name %>
-    ・ネタバレ度<%= post.spoil.name %>
+    <div class="post_detail">
+    <div class="post_product">・<%= post.product %></div>
+    <div class="post_genre">・<%= post.genre.name %></div>
+    <div class="post_type">・<%= post.type.name %></div>
+    <div class="post_spoil">・ネタバレ度<%= post.spoil.name %></div>
+    
+    <div class="post_favorites"><i class="fas fa-heart unlike-btn"></i>
+    <%= post.favorites.count %></div>
+    
+    </div>
+    </div>
 </div>

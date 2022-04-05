@@ -47,10 +47,54 @@ aside {
   padding: 5px;
 }
 
+.post_content{
+  margin: 8px;
+}
+
+.post_date{
+  margin-left: 15px;
+
+}
+
 .title {
   text-decoration: none;
   color: #3b4043;
-  
+  text-decoration: none;
+  color: #3b4043;
+  font-size: 130%;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.post_detail{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.post_product{
+  margin: 0 10px;
+}
+
+.post_genre{
+  margin: 0 10px;
+}
+
+.post_type{
+  margin: 0 10px;
+}
+
+.post_spoil{
+  margin: 0 10px;
+}
+
+.post_favorites{
+  margin-left: auto;
+  font-size: x-large;
+}
+
+.user {
+  text-decoration: none;
+  color: #3b4043;
 }
 
 .section {
@@ -68,7 +112,7 @@ aside {
 /* ヘッダー */
 
 .header {
-  background-color: aqua;
+  background-color: #87CEFA;
   margin-bottom: 48px;
   height: 30vh;
   position:relative;
@@ -88,6 +132,7 @@ aside {
 
 .my-page {
   width:200px ;
+  height: 50px;
   padding-right: 10px;
   margin: 0 100px 0 auto;
   padding-top: 10px;
@@ -99,25 +144,20 @@ aside {
   margin:  auto;
   font-family: "Hiragino Sans","ヒラギノ角ゴシック";
   font-weight: 900;
-  font-size: 40px;
+  font-size: 58px;
 }
 
-
 .nav {
-  height: 13vh;
+  height: 18vh;
   margin-right: 100px;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
-  
 }
 .logo {
   width: 300px;
 }
 
-.nav__left {
-  margin: 5px;
-}
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -147,6 +187,85 @@ aside {
   opacity: 0.5;
 }
 
+.search-btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 5px;
+  background-color: #ffffff;
+}
+
+.search-input{
+  font-size: 0.8em;
+  padding: 0.4em 1.6em;
+  border-color: #87CEFA;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  color: #87CEFA;
+  text-decoration: none;
+}
+
+input::placeholder{
+  color: #87CEFA;
+}
+
+
+.search-btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+/* aサイド */
+.a-head {
+  text-align: center;
+  margin:  auto;
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 900;
+  font-size: x-large;
+  margin-top: 5px;
+}
+
+.a-content {
+  margin: 8px;
+}
+
+.a-text
+ {
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 900;
+  font-size: 200%;
+ }
+
+.ranking {
+  margin: 15px 8px;
+}
+
+.rank_head {
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 900;
+  font-size: x-large;
+  text-align: center;
+
+}
+
+.rank-num {
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 900;
+  font-size: large;
+}
+
+.rank_title {
+  text-decoration: none;
+  color: #3b4043;
+  font-size: large;
+  font-weight: bold;
+}
 
 
 body {

@@ -1,6 +1,0 @@
-<div>
-<% @all_ranks.each.with_index(1) do |post, i| %>
- 第<%= i %>位
-  <%= render partial: "posts/post", locals: { post: post } %>
-<% end %>
-</div>
