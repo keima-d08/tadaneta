@@ -351,6 +351,7 @@ a {
 }
 .prototype__hedding{
   margin-top: 8px;
+  padding-top: 8px;
   font-weight: bold;
   text-align: center;
   font-size: 130%;
@@ -399,11 +400,11 @@ a {
   padding:10px 0 ;
   margin: auto;
   border-bottom: #808080 solid 1px;
-  width: 800px;
+  width: 850px;
 }
 
-.post_meassage {
-  padding: 10px;
+.post_message {
+  padding: 10px 30px;
   margin: 10px 0;
 }
 
