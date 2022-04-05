@@ -1,55 +1,61 @@
 <main class="main">
-  <div class="inner">
+  <div class="show_inner">
     <div class="prototype__wrapper">
-      <p class="prototype__hedding">
-        <%= @post.title%>
-      </p>
-      <%= link_to "by"+@post.user.nickname,user_path(@post.user_id), class: :prototype__user %>
+
+      <div class="prototype__body">
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @post.user_id %>
+       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する",  edit_post_path(@post.id), class: :prototype__btn %>
           <%= link_to "削除する", post_path(@post.id), method: :delete, class: :prototype__btn %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <% end %>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">作品名</p>
-          <p class="detail__message">
-            <%= @post.product %>
-          </p>
+       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+       <% end %>
+
+       <div class="prototype__hedding">
+        <%= link_to @post.user.nickname, user_path(@post.user.id), class:"user" %>
+         が<%= @post.created_at.strftime('%Y年/%m月/%d日') %>に投稿
+        <div class=show_post_title><%= @post.title%></div>
+       </div>
+        
+      
+       
+
+       <div class="show_post_detail">
+       <div>
+         <%= @post.product %>
         </div>
 
-        <div>ジャンル
+        <div>
          <%= @post.genre.name %>
         </div>
 
-        <div>種類
+        <div>
          <%= @post.type.name %>
         </div>
 
-        <div>ネタバレ
+        <div>
          <%= @post.spoil.name %>
         </div>
-        <div class="prototype__detail">
-          <p class="detail__title">本文</p>
-          <p class="detail__message">
+        </div>
+
+
+        <div class="post_meassage">
             <%= @post.content %>
-          </p>
         </div>
       </div>
       
       <%#いいね%>
       <% if user_signed_in? && current_user != @post.user %>
-       <div>
+       <div class = show_favorite>
+        記事が愛に溢れていると感じたら
         <% if @post.favorited?(current_user) %>
-         <%= link_to post_favorite_path(@post.id), method: :delete do %><%= @post.favorites.count %>
-         <i class="fas fa-heart unlike-btn"></i>
+         <%= link_to post_favorite_path(@post.id),class: "show_favorite", method: :delete do %>
+         <i class="fas fa-heart unlike-btn"></i> <%= @post.favorites.count %>
        <% end %>
        <% else %>
-         <%= link_to post_favorites_path(@post.id), method: :post do %><%= @post.favorites.count %>
-         <i class="far fa-heart like-btn" ></i>
+         <%= link_to post_favorites_path(@post.id),class: "show_favorite", method: :post do %>
+         <i class="far fa-heart like-btn" ></i> <%= @post.favorites.count %>
         <% end %>
       <% end %>
       </div>
@@ -83,4 +89,5 @@
       </div>
     </div>
   </div>
+  <div>　　</div>
 </main>

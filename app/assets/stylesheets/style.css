@@ -18,6 +18,7 @@ div {
 }
 
 /* 追加 */
+
 .main {
   background-color: #f6f6f6;
   border-top:#808080 solid 1px;
@@ -29,14 +30,14 @@ article {
 
 aside {
   width: 22%;
-  background-color: white;
-  margin-top:25px ;
+  background-color: #ffffff;
+  margin: 25px 0 ;
 }
 
 .main_contents {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  
   background-color: #f6f6f6;
   padding: 10px;
 }
@@ -106,7 +107,7 @@ aside {
 
 .inner {
   width: 1424px;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 /* ヘッダー */
@@ -340,14 +341,29 @@ a {
 
 
 /* 詳細ページ */
+.show_inner {
+  width: 1424px;
+  margin: 0 auto;
+}
+
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
 }
 .prototype__hedding{
-  font-size: 24px;
+  margin-top: 8px;
   font-weight: bold;
   text-align: center;
+  font-size: 130%;
+  background-color: #ffffff;
 }
+
+.show_post_title{
+  font-size: 180%;
+  font-weight: bold;
+  margin: 15px 0 ;
+
+}
+
 .prototype__user{
   display: block;
   font-size: 16px;
@@ -355,26 +371,42 @@ a {
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
+
+.prototype__body {
+ width: 900px;
+ margin: 15px auto;
+ background-color: #ffffff;
 }
+
 .prototype__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 8px;
 }
-.detail__title{
-  font-size: 20px;
-  font-weight: bold;
-}
+
 .prototype__manage{
   display: flex;
   justify-content: center;
-  padding-top: 16px;
+  padding-top: 16px; 
 }
+
+.show_post_detail{
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:10px 0 ;
+  margin: auto;
+  border-bottom: #808080 solid 1px;
+  width: 800px;
+}
+
+.post_meassage {
+  padding: 10px;
+  margin: 10px 0;
+}
+
 .prototype__btn{
   display: block;
   padding: 0.4em 1.6em;
@@ -392,10 +424,22 @@ a {
   background: #999;
 }
 
+.show_favorite {
+  background-color: #ffffff;
+  width: 900px;
+  margin: auto;
+  text-decoration: none;
+  color: #808080;
+  text-align: center;
+  font-size: x-large;
+
+}
+
 .prototype__comments{
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   padding: 20px;
-  margin: 28px 0 40px 0;
+  width: 900px;
+  margin: 15px auto;
 }
 
 .comments_lists{
@@ -467,12 +511,15 @@ a {
 .footer {
   background-color: #999;
   padding: 10px 0;
+  
 }
 .copyright {
   text-align: center;
   color: #fff;
   font-size: 10px;
 }
+
+
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
