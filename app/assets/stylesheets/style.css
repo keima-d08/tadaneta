@@ -17,19 +17,17 @@ div {
   padding: 0;
 }
 
-/* 追加 */
-
 .main {
   background-color: #f6f6f6;
   border-top:#808080 solid 1px;
 }
 
 article {
-  width: 74%;
+  width: 1050px;
 }
 
 aside {
-  width: 22%;
+  width: 330px;
   background-color: #ffffff;
   margin: 25px 0 ;
 }
@@ -37,7 +35,6 @@ aside {
 .main_contents {
   display: flex;
   justify-content: space-between;
-  
   background-color: #f6f6f6;
   padding: 10px;
 }
@@ -93,21 +90,12 @@ aside {
   font-size: x-large;
 }
 
+.post_search{
+  margin: 0 50px;
+}
 .user {
   text-decoration: none;
   color: #3b4043;
-}
-
-.section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-}
-
-.inner {
-  width: 1424px;
-  margin: 0 auto;
 }
 
 /* ヘッダー */
@@ -115,7 +103,7 @@ aside {
 .header {
   background-color: #87CEFA;
   margin-bottom: 48px;
-  height: 30vh;
+  height: 225px;
   position:relative;
   border-bottom: #808080 solid 1px;
 }
@@ -128,7 +116,6 @@ aside {
 .logo {
   position:absolute;
   bottom: 0px;
-  left: 100px;
 }
 
 .my-page {
@@ -142,27 +129,26 @@ aside {
 
 .head_title {
   text-align: center;
-  margin:  auto;
   font-family: "Hiragino Sans","ヒラギノ角ゴシック";
   font-weight: 900;
   font-size: 58px;
+  margin-left: 30px;
 }
 
 .nav {
-  height: 18vh;
-  margin-right: 100px;
+  margin: 91px 20px 0 0;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
 }
 .logo {
-  width: 300px;
+  width: 295px;
 }
 
 .nav__btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 6px 26px;
+  font-size: 13px;
   color: #87CEFA;
   text-decoration: none;
   user-select: none;
@@ -178,8 +164,8 @@ aside {
 
 .nav__logout{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 6px 26px;
+  font-size: 13px;
   color: #87CEFA;
   text-decoration: none;
   user-select: none;
@@ -190,8 +176,8 @@ aside {
 
 .search-btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 6px 26px;
+  font-size: 13px;
   color: #87CEFA;
   text-decoration: none;
   user-select: none;
@@ -203,8 +189,8 @@ aside {
 }
 
 .search-input{
-  font-size: 0.8em;
-  padding: 0.4em 1.6em;
+  font-size: 13px;
+  padding: 6px 26px;
   border-color: #87CEFA;
   border: 1px #87CEFA solid;
   border-radius: 3px;
@@ -215,7 +201,6 @@ aside {
 input::placeholder{
   color: #87CEFA;
 }
-
 
 .search-btn:hover{
   color: #fff;
@@ -309,8 +294,8 @@ a {
 
 .form__btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 6px 26px;
+  font-size: 13px;
   color: #fff;
   text-decoration: none;
   user-select: none;
@@ -334,15 +319,9 @@ a {
 
 
 /* 詳細ページ */
-.show_inner {
-  width: 1424px;
-  margin: 0 auto;
-}
 
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.prototype__hedding{
+
+.post_hedding{
   margin-top: 8px;
   padding-top: 8px;
   font-weight: bold;
@@ -358,7 +337,7 @@ a {
 
 }
 
-.prototype__user{
+.post_user{
   display: block;
   font-size: 16px;
   color: #999;
@@ -366,19 +345,13 @@ a {
   text-decoration: underline;
 }
 
-.prototype__body {
+.post_body {
  width: 900px;
  margin: 15px auto;
  background-color: #ffffff;
 }
 
-.prototype__detail{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.prototype__manage{
+.post_manage{
   display: flex;
   justify-content: center;
   padding-top: 16px; 
@@ -401,10 +374,10 @@ a {
   margin: 10px 0;
 }
 
-.prototype__btn{
+.post_btn{
   display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
+  padding: 6px 26px;
+  font-size: 7px;
   color: #999;
   text-align: center;
   text-decoration: none;
@@ -414,7 +387,7 @@ a {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
+.post_btn:hover{
   color: #fff;
   background: #999;
 }
@@ -427,10 +400,9 @@ a {
   color: #808080;
   text-align: center;
   font-size: x-large;
-
 }
 
-.prototype__comments{
+.post_comments{
   background-color: #ffffff;
   padding: 20px;
   width: 900px;
@@ -476,7 +448,7 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   background-color: #ffffff;
-  margin-top: 20px;
+  margin: 20px 30px;
 }
 
 .user_date {
@@ -494,7 +466,6 @@ a {
   margin: 10px 5px;
   width: 600px;
   font-size: 120%;
-  
 }
 
 .user_follows{
@@ -534,8 +505,8 @@ a {
 
 .followed_btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 1em;
+  padding: 6px 26px;
+  font-size: 15px;
   color: #fff;
   text-decoration: none;
   user-select: none;
@@ -563,6 +534,10 @@ a {
 
 .post_list{
   margin: 20px 0px 0px 10px;
+}
+
+.user_post{
+  margin: 20px 30px;
 }
 
 .follow_name{
@@ -608,7 +583,7 @@ a {
   box-sizing: border-box;
 }
 
- 
+
 /* フッター */
 
 .footer {
@@ -620,50 +595,4 @@ a {
   text-align: center;
   color: #fff;
   font-size: 10px;
-}
-
-
-
-/* タブレット対応 */
-@media (max-width: 1024px) {
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .page-heading {
-    font-size: 24px;
-  }
-  .card {
-    width: 48%;
-    margin-bottom: 40px;
-  }
-  .prototype_image{
-    width: 60%;
-  }
-}
-
- /* スマホ表示 */
-@media (max-width: 599px) {
-  .logo {
-    width: 120px;
-  }
-  .page-heading {
-    font-size: 20px;
-  }
-  .card {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .prototype_image{
-    width: 100%;
-  }
-  .table{
-    width: 100%;
-  }
 }
