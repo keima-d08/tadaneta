@@ -5,11 +5,10 @@ class Spoil < ActiveHash::Base
     { id: 3, name: '★★' },
     { id: 4, name: '★★★' },
     { id: 5, name: '★★★★' },
-    { id: 6, name: '★★★★★' },
-    
-  ]
- 
-   include ActiveHash::Associations
-   has_many :posts
+    { id: 6, name: '★★★★★' }
 
+  ]
+
+  include ActiveHash::Associations
+  has_many :posts
 end

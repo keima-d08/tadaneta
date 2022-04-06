@@ -7,9 +7,9 @@ class Post < ApplicationRecord
   validates :title,       presence: true
   validates :content,     presence: true
   validates :product,     presence: true
-  validates :genre_id,    presence: true, numericality: { other_than: 1 } 
-  validates :type_id,     presence: true, numericality: { other_than: 1 } 
-  validates :spoil_id,    presence: true, numericality: { other_than: 1 } 
+  validates :genre_id,    presence: true, numericality: { other_than: 1 }
+  validates :type_id,     presence: true, numericality: { other_than: 1 }
+  validates :spoil_id,    presence: true, numericality: { other_than: 1 }
 
   belongs_to :user
   has_many :comments, dependent: :destroy
@@ -18,8 +18,8 @@ class Post < ApplicationRecord
   has_rich_text :content
 
   def self.search(search)
-    if search != ""
-      Post.where('title LIKE(?) OR content LIKE(?) OR product LIKE(?)', "%#{search}%","%#{search}%","%#{search}%")
+    if search != ''
+      Post.where('title LIKE(?) OR content LIKE(?) OR product LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
     else
       Post.all
     end
@@ -27,6 +27,5 @@ class Post < ApplicationRecord
 
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
- end
- 
+  end
 end
