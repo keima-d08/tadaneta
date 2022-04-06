@@ -20,6 +20,11 @@
     <%= f.text_area :profile, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :image, "プロフィール画像" %><br />
+    <%= f.file_field :image, id:"user_image" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

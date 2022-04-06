@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
   def search
     if
-    @posts = Post.search(params[:keyword])
+    @posts = Post.includes(:user).search(params[:keyword]).order("created_at DESC")
     else
       redirect_to root_path
     end

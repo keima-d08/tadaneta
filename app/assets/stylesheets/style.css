@@ -413,6 +413,7 @@ a {
   padding: 0.4em 1.6em;
   font-size: 0.4em;
   color: #999;
+  text-align: center;
   text-decoration: none;
   user-select: none;
   border: 1px #999 solid;
@@ -477,36 +478,103 @@ a {
   }
 
 /* ユーザーページ */
-.user__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #f5f5f5;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
-}
-.user__card {
+.user_show{
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  background-color: #ffffff;
+  margin-top: 20px;
 }
+
+.user_date {
+  margin: 20px;
+}
+
+.user_nickname {
+  font-size: 180%;
+  font-weight: bold;
+  margin: 10px 5px;
+  
+ 
+}
+
+.user_profile{
+  height: 200px;
+  margin: 10px 5px;
+  width: 600px;
+  font-size: 120%;
+  
+}
+
+.user_follows{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px 5px;
+  border-top: #808080 solid 1px;
+}
+
+.follower{
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3b4043;
+}
+
+.follow{
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3b4043;
+}
+
+.post_count{
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3b4043;
+}
+
+.user_followed{
+  height: 50px;
+  margin: 10px 5px;
+}
+
+.followed_btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #87CEFA;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.user_image {
+  width: 400px;
+  height: 400px;
+  margin: 20px 150px;
+}
+
+.circle{
+  border-radius: 50%;
+      width: 380px;
+      height: 380px;
+      object-fit: cover;
+      border: solid 0.3px #808080;
+      margin: 10px;
+}
+
+.post_list{
+  margin: 20px 0px 0px 10px;
+}
+
+ 
 /* フッター */
 
 .footer {
