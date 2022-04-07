@@ -17,16 +17,18 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_rich_text :content
 
-  def self.search(search)
-    if search != ''
-      Post.where('title LIKE(?) OR content LIKE(?) OR product LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
+  
+  scope :search, -> (search_param = nil) {
+    if search_param
+    return if search_param.blank?
+    joins("INNER JOIN action_text_rich_texts ON action_text_rich_texts.record_id = posts.id AND action_text_rich_texts.record_type = 'Post'")
+    .where("action_text_rich_texts.body LIKE ? OR posts.title LIKE ? OR product LIKE(?)", "%#{search_param}%", "%#{search_param}%", "%#{search_param}%")
+   
     else
       Post.all
     end
-  end
+  }
 
-  
-  
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
   end
