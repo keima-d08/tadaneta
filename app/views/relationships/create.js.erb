@@ -1,1 +1,1 @@
-<%= (render 'unfollow_button') %>
+document.getElementById('follow-ajax').innerHTML = '<%= j(render partial: 'relationships/follow', locals: { user: @user }) %>

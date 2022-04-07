@@ -41,17 +41,11 @@
       
       <%#いいね%>
       <% if user_signed_in? && current_user != @post.user %>
-       <div class = show_favorite>
+       <div class = "show_favorite" >
         記事が愛に溢れていると感じたら
-        <% if @post.favorited?(current_user) %>
-         <%= link_to post_favorite_path(@post.id),class: "show_favorite", method: :delete do %>
-         <i class="fas fa-heart unlike-btn"></i> <%= @post.favorites.count %>
-       <% end %>
-       <% else %>
-         <%= link_to post_favorites_path(@post.id),class: "show_favorite", method: :post do %>
-         <i class="far fa-heart like-btn" ></i> <%= @post.favorites.count %>
-        <% end %>
-      <% end %>
+        <div id="favorite_btn_<%= @post.id %>">
+        <%= render 'favorites/favorite', post: @post %>
+        </div>
       </div>
       <% end %>
       <%#いいね%>

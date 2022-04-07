@@ -38,17 +38,12 @@
     
     <div class= "user_followed">
      <% if user_signed_in? && current_user != @user %>
-         <div>
-            <% if current_user.following?(@user) %>
-              <%= render 'relationships/unfollow_button', user: @user %>
-             <% else %>
-             <%= render 'relationships/follow_button', user: @user %>
-            <% end %>
+         <div id="follow-ajax">
+            <%= render "relationships/follow", locals: { user: @user } %>
           </div>
         <% end %>
         </div>
     </div>
-
 
 
       <div class=user_image>
