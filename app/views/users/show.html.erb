@@ -39,7 +39,7 @@
     <div class= "user_followed">
      <% if user_signed_in? && current_user != @user %>
          <div id="follow-ajax">
-            <%= render "relationships/follow", locals: { user: @user } %>
+            <%= render "relationships/follow", remot: true, locals: { user: @user } %>
           </div>
         <% end %>
         </div>

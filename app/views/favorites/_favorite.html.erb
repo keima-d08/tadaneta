@@ -1,9 +1,11 @@
- <% if post.favorited?(current_user) %>
-         <%= link_to post_favorite_path(post.id),class: "show_favorite", method: :delete, remote: true do %>
-         <i class="fas fa-heart unlike-btn"></i> <%= post.favorites.count %>
-       <% end %>
-       <% else %>
-         <%= link_to post_favorites_path(post.id),class: "show_favorite", method: :post, remote: true do %>
-         <i class="far fa-heart like-btn" ></i> <%= post.favorites.count %>
-        <% end %>
+ <%Rails.logger.info 'テスト'%>
+ <%Rails.logger.info @post.favorited?(current_user)%>
+<% if @post.favorited?(current_user) %>
+  <%= link_to post_favorites_path(@post.id),class: "show_favorite", method: :delete, remote: true do %>
+    <i class="far fa-heart like-btn" ></i> <%= @post.favorites.count %>
   <% end %>
+<% else %>
+  <%= link_to post_favorites_path(@post.id),class: "show_favorite", method: :post, remote: true do %>
+    <i class="far fa-heart like-btn" ></i> <%= @post.favorites.count %>
+  <% end %>
+<% end %>

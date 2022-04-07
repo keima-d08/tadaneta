@@ -44,7 +44,7 @@
        <div class = "show_favorite" >
         記事が愛に溢れていると感じたら
         <div id="favorite_btn_<%= @post.id %>">
-        <%= render 'favorites/favorite', post: @post %>
+        <%= render "favorites/favorite", locals: { post: @post } %>
         </div>
       </div>
       <% end %>
