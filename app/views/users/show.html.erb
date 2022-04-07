@@ -40,9 +40,9 @@
      <% if user_signed_in? && current_user != @user %>
          <div>
             <% if current_user.following?(@user) %>
-             <%= link_to 'フォロー中', user_relationships_path(@user.id),class: :followed_btn, method: :delete %>
+              <%= render 'relationships/unfollow_button', user: @user %>
              <% else %>
-             <%= link_to 'フォロー', user_relationships_path(@user.id),class: :followed_btn, method: :POST %>
+             <%= render 'relationships/follow_button', user: @user %>
             <% end %>
           </div>
         <% end %>
