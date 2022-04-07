@@ -24,8 +24,6 @@ class Post < ApplicationRecord
     joins("INNER JOIN action_text_rich_texts ON action_text_rich_texts.record_id = posts.id AND action_text_rich_texts.record_type = 'Post'")
     .where("action_text_rich_texts.body LIKE ? OR posts.title LIKE ? OR product LIKE(?)", "%#{search_param}%", "%#{search_param}%", "%#{search_param}%")
    
-    else
-      Post.all
     end
   }
 
