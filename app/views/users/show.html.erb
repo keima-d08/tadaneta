@@ -19,7 +19,7 @@
       <%#フォロー%>
       <div class= "user_follows">
 
-        <div class= "follow">
+        <div class= "follow" >
           <%= link_to follows_user_path(@user),class:"follow" do %>
          フォロー <%= @following_users.count %>
          </div>
@@ -36,7 +36,7 @@
          </div>
      </div>
     
-    <div class= "user_followed">
+   <div class= "user_followed">
      <% if user_signed_in? && current_user != @user %>
          <div id="follow-ajax">
             <%= render "relationships/follow", remot: true, locals: { user: @user } %>
@@ -44,6 +44,7 @@
         <% end %>
         </div>
     </div>
+
 
 
       <div class=user_image>

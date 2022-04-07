@@ -14,17 +14,9 @@
      <div class= follow_name>
      <%= link_to user.nickname,user_path(user.id), class: "follow_name" %>
      </div>
-     <div class= "user_follow">
-     <% if user_signed_in? && current_user != user %>
-         <div>
-            <% if current_user.following?(user) %>
-             <%= link_to 'フォロー中', user_relationships_path(user.id),class: :followed_btn, method: :delete %>
-             <% else %>
-             <%= link_to 'フォロー', user_relationships_path(user.id),class: :followed_btn, method: :POST %>
-            <% end %>
-          </div>
-        <% end %>
-        </div>
+
+     
+       
     </div>
   </div>
   <% end %>
