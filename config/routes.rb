@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   resources :posts do
-   resources :comments, only: :create
+   resource :comments, only: :create
    resource :favorites, only: [:create, :destroy]
    collection do
     get 'search'
   end
  end
+ resources :comments, only: [:destroy]
 
   resources :users, only: :show do
     member do

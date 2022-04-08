@@ -67,8 +67,11 @@
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
             <li class="comments_list">
-              <%= comment.content%>
+              <span class= "comment_content"><%= comment.content%></span>
               <%= link_to comment.user.nickname, user_path(comment.user_id), class: :comment_user %>
+              <% if user_signed_in? && current_user.id == comment.user_id %>
+              <%= link_to "コメント削除", comment_path(comment.id) , method: :delete, class: :delete_btn %>
+              <% end %>
             </li>
           <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>

@@ -402,6 +402,24 @@ a {
   font-size: x-large;
 }
 
+.delete_btn{
+  padding: 3px 9px;
+  font-size: 7px;
+  color: #999;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
+.delete_btn:hover{
+  color: #fff;
+  background: #999;
+}
+
 .post_comments{
   background-color: #ffffff;
   padding: 20px;
@@ -418,10 +436,15 @@ a {
   padding-bottom: 5px;
 }
 
+.comment_content{
+  font-size: large;
+}
+
 .comment_user{
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+  margin-left: 15px;
 }
 
 /* いいね */
@@ -472,7 +495,7 @@ a {
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content:space-around;
   margin: 15px 5px;
   border-top: #808080 solid 1px;
 }
@@ -492,6 +515,13 @@ a {
 }
 
 .post_count{
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3b4043;
+}
+
+.favorites_count{
   font-size: large;
   font-weight: bold;
   text-decoration: none;

@@ -19,25 +19,28 @@
       <div class= "user_follows">
 
         <div class= "follow" >
-          <%= link_to follows_user_path(@user),class:"follow" do %>
+           <%= link_to follows_user_path(@user),class:"follow" do %>
          フォロー <%= @following_users.count %>
+          <% end %>
          </div>
-        <% end %>
+        
         <div class= "follower">
         <%= link_to followers_user_path(@user),class:"follower" do %>
         フォロワー <%= @follower_users.count %>
-        </div>
         <% end %>
+        </div>
+        
      
         <div class= "post_count">
          投稿数 <%= @user.posts.count %>
          </div>
 
-         <div class= "post_count">
+         <div class= "favorites_count">
          <%= link_to favorites_user_path(@user),class:"follower" do %>
          いいね <%= @user.favorites.count %>
+          <% end %>
          </div>
-         <% end %>
+        
      </div>
     
    <div class= "user_followed">

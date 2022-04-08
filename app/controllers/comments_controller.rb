@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -8,6 +9,12 @@ class CommentsController < ApplicationController
       @comments = @post.comments
       render 'posts/show'
     end
+  end
+
+  def destroy
+    comments = Comment.find(params[:id])
+    comments.destroy
+    redirect_back fallback_location: @post
   end
 
   private
