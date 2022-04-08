@@ -16,7 +16,6 @@
          <%= @user.profile %>
        </div>
       
-      <%#フォロー%>
       <div class= "user_follows">
 
         <div class= "follow" >
@@ -30,10 +29,15 @@
         </div>
         <% end %>
      
-       <%#フォロー%>
         <div class= "post_count">
          投稿数 <%= @user.posts.count %>
          </div>
+
+         <div class= "post_count">
+         <%= link_to favorites_user_path(@user),class:"follower" do %>
+         いいね <%= @user.favorites.count %>
+         </div>
+         <% end %>
      </div>
     
    <div class= "user_followed">
