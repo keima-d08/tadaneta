@@ -1,24 +1,28 @@
 <div class= "main">
- <div class= "follow_wrapper">
+  <div class= "follow_wrapper">
+    <% @users.each do |user| %>
+      <div class= follow_list>
+        <div class=follow_img>
+          <% if user.image.attached? %>
+            <%= image_tag user.image, class: :follow_circle%>
+          <% else %>
+            <%= image_tag "icon.png",class: :follow_circle %>
+          <% end %>
+        </div>
 
-  <% @users.each do |user| %>
-  
-  <div class= follow_list>
-     <div class=follow_img>
-      <% if user.image.attached? %>
-       <%= image_tag user.image, class: :follow_circle%>
-      <% else %>
-      <%= image_tag "icon.png",class: :follow_circle %>
-        <% end %>
-     </div>
-     <div class= follow_name>
-     <%= link_to user.nickname,user_path(user.id), class: "follow_name" %>
-     </div>
+        <div class= follow_name>
+          <%= link_to user.nickname,user_path(user.id), class: "follow_name" %>
+        </div>
 
-     
-       
+        <div class= "user_follow">
+          <% if user_signed_in? && current_user != user %>
+            <div id="follow-ajax">
+              <%= render "relationships/follow", remot: true, locals: { user: @user } %>
+        </div>
+          <% end %>
+      </div>
+
     </div>
+    <% end %>
   </div>
-  <% end %>
- </div>
 </div>
