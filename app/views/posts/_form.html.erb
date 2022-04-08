@@ -9,18 +9,18 @@
    <%= f.text_field :product, id:"post_product" %>
   </div>
 
-<div>
- <p>ジャンル</p>
+<div class="genre">
+ <div>ジャンル</div>
   <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}) %>
 </div>
 
-<div>
- <p>タイプ</p>
+<div class="type">
+ <div>タイプ</div>
  <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
 </div>
 
-<div>
- <p>ネタバレ</p>
+<div class="spoile">
+ <div >ネタバレ</div>
  <%= f.collection_select(:spoil_id, Spoil.all, :id, :name, {}) %>
 </div>
 

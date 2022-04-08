@@ -289,7 +289,7 @@ a {
 }
 
 .actions{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .form__btn{
@@ -313,8 +313,21 @@ a {
 
 
 .page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 900;
+  font-size: 250%;
+}
+
+.genre{
+  margin: 5px 0;
+}
+
+.type{
+  margin: 5px 0;
+}
+
+.spoile{
+  margin: 5px 0;
 }
 
 
