@@ -1,3 +1,6 @@
-<% @posts.each do |post|%>
-<%=post.title %>
-<% end %>
+<div class="main">
+    <div class= post_search>
+      <%= render partial:"posts/post", collection: @posts %>
+    </div>
+</div>
+
