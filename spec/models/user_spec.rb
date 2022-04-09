@@ -12,18 +12,6 @@ RSpec.describe User, type: :model do
     end
 
     context '新規登録出来ない時'
-    it 'nicknameが空では登録できない' do
-      @user.nickname = ''
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Nickname can't be blank")
-    end
-
-    it 'プロフィールが空では登録できない' do
-      @user.profile = ''
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Nickname can't be blank")
-    end
-
     it 'emailが空では登録できない' do
       @user.email = ''
       @user.valid?
@@ -36,16 +24,16 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password can't be blank")
     end
 
-    it 'nicknameが20文字以上では登録できない' do
-      @user.nickname = 'a' * 21
+    it 'nicknameが空では登録できない' do
+      @user.nickname = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Nickname can't be blank")
     end
 
-    it 'プロフィールが200以上では登録できない' do
-      @user.profile = 'a' * 201
+    it 'プロフィールが空では登録できない' do
+      @user.profile = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("Nickname can't be blank")
+      expect(@user.errors.full_messages).to include("Profile can't be blank")
     end
 
     it 'emailは@を含まないと登録できない' do
@@ -101,6 +89,18 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = @user.password
       @user.valid?
       expect(@user.errors.full_messages).to include('Password is invalid')
+    end
+
+    it 'nicknameが20文字以上では登録できない' do
+      @user.nickname = 'a' * 21
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Nickname is too long (maximum is 20 characters)")
+    end
+
+    it 'プロフィールが200以上では登録できない' do
+      @user.profile = 'a' * 201
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Profile is too long (maximum is 200 characters)")
     end
 
   end
