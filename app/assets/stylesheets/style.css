@@ -17,6 +17,11 @@ div {
   padding: 0;
 }
 
+.error-message {
+  list-style: circle;
+  color: red;
+}
+
 .main {
   background-color: #f6f6f6;
   border-top:#808080 solid 1px;

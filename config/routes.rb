@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     get 'search'
   end
  end
- resources :comments, only: [:destroy]
+ resources :comments, only: :destroy
 
-  resources :users, only: :show do
+  resources :users, only: [:show, :index] do
     member do
       get :follows, :followers, :favorites
     end

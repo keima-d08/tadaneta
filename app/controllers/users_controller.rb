@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  
+  def index
+    redirect_to new_user_registration_path
+  end
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order('created_at DESC')
