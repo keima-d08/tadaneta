@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   validates :title,       presence: true, length: {maximum:50}
   validates :content,     presence: true
-  validates :product,     presence: true, length: {maximum:30}
+  validates :product,     presence: true
   validates :genre_id,    presence: true, numericality: { other_than: 1 }
   validates :type_id,     presence: true, numericality: { other_than: 1 }
   validates :spoil_id,    presence: true, numericality: { other_than: 1 }
