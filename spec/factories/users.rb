@@ -5,5 +5,6 @@ FactoryBot.define do
     password_confirmation { password }
     nickname              { Faker::Name.initials(number: 2) }
     profile               {'よろしくお願いします'}
+
   end
 end

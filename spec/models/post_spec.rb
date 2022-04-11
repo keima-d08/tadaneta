@@ -42,7 +42,7 @@ RSpec.describe Post, type: :model do
       expect(@post.errors.full_messages).to include('Type must be other than 1')
     end
 
-    it 'ネタバレが--では投稿できない' do
+    it 'ネタバレ度が--では投稿できない' do
       @post.spoil_id = '1'
       @post.valid?
       expect(@post.errors.full_messages).to include('Spoil must be other than 1')
