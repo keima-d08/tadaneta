@@ -70,4 +70,4 @@ group :development do
   gem 'rubocop', require: false
 end
 
-gem 'jquery-rails'
+gem "aws-sdk-s3", require: false
