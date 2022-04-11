@@ -30,26 +30,24 @@ RSpec.describe Relationship, type: :model do
     context "一意性の検証" do
 
       before do
-        @relation = FactoryBot.create(:relationship)
-        @user1 = FactoryBot.build(:relationship)
+        @another_user = FactoryBot.build(:relationship)
       end
 
       it "follower_idとfollowed_idの組み合わせは一意でなければ保存できない" do
-        relation2 = FactoryBot.build(:relationship, follower_id: @relation.follower_id, followed_id: @relation.followed_id)
-        relation2.valid?
-        expect(relation2.errors.full_messages).to include("Follower has already been taken")
+        @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id, followed_id: @relationship.followed_id)
+        @another_relation.valid?
+        expect(@another_relation.errors.full_messages).to include("Follower has already been taken")
       end
 
       it "follower_idが同じでもfollowed_idが違うなら保存できる" do
-        relation2 = FactoryBot.build(:relationship, follower_id: @relation.follower_id, followed_id: @user1.followed_id)
-        expect(relation2).to be_valid
+        @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id, followed_id: @another_user.followed_id)
+        expect(@another_relation).to be_valid
       end
 
       it "follower_idが違うならfollowed_idが同じでも保存できる" do
-        relation2 = FactoryBot.build(:relationship, follower_id: @user1.follower_id, followed_id: @relation.followed_id)
-        expect(relation2).to be_valid
+        @another_relation = FactoryBot.build(:relationship, follower_id: @another_user.follower_id, followed_id: @relationship.followed_id)
+        expect(@another_relation).to be_valid
       end
     end
   end
-  
 end
