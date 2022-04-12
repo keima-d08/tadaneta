@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
     it 'プロフィールが空では登録できない' do
       @user.profile = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("Profileを入力してください")
+      expect(@user.errors.full_messages).to include("プロフィールを入力してください")
     end
 
     it 'emailは@を含まないと登録できない' do
@@ -100,7 +100,7 @@ RSpec.describe User, type: :model do
     it 'プロフィールが200以上では登録できない' do
       @user.profile = 'a' * 201
       @user.valid?
-      expect(@user.errors.full_messages).to include("Profileは200文字以内で入力してください")
+      expect(@user.errors.full_messages).to include("プロフィールは200文字以内で入力してください")
     end
 
   end
