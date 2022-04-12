@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      post:
+        title: タイトル
+        content: 本文
+        product: 作品名
+        genre_id: ジャンル
+        type_id: タイプ
+        spoil_id: ネタバレ度 
