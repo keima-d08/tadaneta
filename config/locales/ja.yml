@@ -3,6 +3,7 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
+        profile: プロフィール
       post:
         title: タイトル
         content: 本文
