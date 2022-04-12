@@ -18,13 +18,13 @@ RSpec.describe Favorite, type: :model do
       it "user_idが空ではいいねできない" do
         @favorite.user_id = ""
         @favorite.valid?
-        expect(@favorite.errors.full_messages).to include ("User must exist")
+        expect(@favorite.errors.full_messages).to include ("Userを入力してください")
       end
 
       it "post_idが空ではいいねできない" do
         @favorite.post_id = ""
         @favorite.valid?
-        expect(@favorite.errors.full_messages).to include ("Post must exist")
+        expect(@favorite.errors.full_messages).to include ("Postを入力してください")
       end
     end
 
@@ -32,13 +32,11 @@ RSpec.describe Favorite, type: :model do
       before do
         @another_favorite = FactoryBot.create(:favorite)
       end
-     
-
       it "post_idとuser_idの組み合わせは一意でなければ保存できない" do
         @favorite = FactoryBot.create(:favorite)
         favorite2 = FactoryBot.build(:favorite, user_id: @favorite.user_id, post_id: @favorite.post_id)
         favorite2.valid?
-        expect(favorite2.errors.full_messages).to include("Post has already been taken")
+        expect(favorite2.errors.full_messages).to include("Postはすでに存在します")
       end
 
       it "post_idが同じでもuser_idが違えばいいねできる" do

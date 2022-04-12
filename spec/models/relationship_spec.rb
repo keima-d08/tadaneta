@@ -17,13 +17,13 @@ RSpec.describe Relationship, type: :model do
       it "follower_idが空の場合は保存できない" do
         @relationship.follower_id = ""
         @relationship.valid?
-        expect(@relationship.errors.full_messages).to include("Follower must exist", "Follower can't be blank")
+        expect(@relationship.errors.full_messages).to include("Followerを入力してください", "Followerを入力してください")
       end
 
       it "followed_idが空の場合は保存できない" do
         @relationship.followed_id = ""
         @relationship.valid?
-        expect(@relationship.errors.full_messages).to include("Followed must exist", "Followed can't be blank")
+        expect(@relationship.errors.full_messages).to include("Followedを入力してください", "Followedを入力してください")
       end
     end
 
@@ -36,7 +36,7 @@ RSpec.describe Relationship, type: :model do
       it "follower_idとfollowed_idの組み合わせは一意でなければ保存できない" do
         @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id, followed_id: @relationship.followed_id)
         @another_relation.valid?
-        expect(@another_relation.errors.full_messages).to include("Follower has already been taken")
+        expect(@another_relation.errors.full_messages).to include("Followerはすでに存在します")
       end
 
       it "follower_idが同じでもfollowed_idが違うなら保存できる" do
