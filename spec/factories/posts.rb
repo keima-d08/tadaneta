@@ -8,6 +8,5 @@ FactoryBot.define do
     content                 { 'テスト' }
 
     association :user
-
   end
 end

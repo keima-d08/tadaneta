@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   belongs_to :type
   belongs_to :spoil
 
-  validates :title,       presence: true, length: {maximum:50}
+  validates :title,       presence: true, length: { maximum: 50 }
   validates :content,     presence: true
   validates :product,     presence: true
   validates :genre_id,    presence: true

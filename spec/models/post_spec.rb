@@ -21,13 +21,13 @@ RSpec.describe Post, type: :model do
     it 'タイトルが空では投稿できない' do
       @post.title = ''
       @post.valid?
-      expect(@post.errors.full_messages).to include("タイトルを入力してください")
+      expect(@post.errors.full_messages).to include('タイトルを入力してください')
     end
 
     it '作品名が空では投稿できない' do
       @post.product = ''
       @post.valid?
-      expect(@post.errors.full_messages).to include("作品名を入力してください")
+      expect(@post.errors.full_messages).to include('作品名を入力してください')
     end
 
     it 'ジャンルが空では投稿できない' do
@@ -51,7 +51,7 @@ RSpec.describe Post, type: :model do
     it '本文が空では投稿できない' do
       @post.content = ''
       @post.valid?
-      expect(@post.errors.full_messages).to include("本文を入力してください")
+      expect(@post.errors.full_messages).to include('本文を入力してください')
     end
 
     it 'タイトルが50文字以上では投稿できない' do
@@ -59,6 +59,5 @@ RSpec.describe Post, type: :model do
       @post.valid?
       expect(@post.errors.full_messages).to include('タイトルは50文字以内で入力してください')
     end
-
   end
 end

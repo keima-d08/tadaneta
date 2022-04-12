@@ -1,12 +1,10 @@
 <div class="main">
       <div class="post_body">
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
        <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="post_manage">
           <%= link_to "編集する",  edit_post_path(@post.id), class: :post_btn %>
           <%= link_to "削除する", post_path(@post.id), method: :delete, class: :post_btn %>
         </div>
-       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
        <% end %>
 
        <div class="post_hedding">
@@ -50,7 +48,6 @@
       <%#いいね%>
     
       <div class="post_comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in?  %>
           <%= form_with model:[@post,@comment],local: true do |f|%>
             <div class="field">
@@ -62,9 +59,8 @@
             </div>
           <% end %>
         <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
+
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <span class= "comment_content"><%= comment.content%></span>
@@ -74,7 +70,6 @@
               <% end %>
             </li>
           <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
   <div>　</div>

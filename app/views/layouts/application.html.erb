@@ -13,49 +13,38 @@
 
   <body>
     <header class="header">
-     <div>
-     <%= link_to image_tag('tadaneta.png', class: :logo), root_path %>
-     </div>
-     <div class='my-page'>
+      <div>
+        <%= link_to image_tag('tadaneta.png', class: :logo), root_path %>
+      </div>
+      <div class='my-page'>
         <% if user_signed_in? %>
-         <%= link_to user_path(current_user.id), method: :get do %>
+        <%= link_to user_path(current_user.id), method: :get do %>
         <i class="fas fa-portrait icon"></i>
         <% end %>
         <% end %>
          </div>
-<div class = "head_title">ただのネタバレには興味ありません</div>
-
-       
-     
-          <div class="nav">
-           
-           <%# ログインしているときは以下を表示するようにしましょう %>
-           <% if user_signed_in? %>
+      <div class = "head_title">ただのネタバレには興味ありません</div>
+        <div class="nav">
+          <% if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "ログアウト", destroy_user_session_path,method: :delete, class: :nav__logout %>
-              <%= link_to "投稿", new_post_path, class: :nav__btn %>
-            </div>
-           <%# // ログインしているときは上記を表示するようにしましょう %>
-           <%# ログインしていないときは以下を表示するようにしましょう %>
-           <% else %>
-            <div class="nav__right">
-              <%= link_to "ログイン", user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div>
-            <% end %>
-           <%# // ログインしていないときは上記を表示するようにしましょう %>
-           <div class="nav__left">
-           <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-            <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-            <%= form.submit "検索", class: "search-btn" %>
-            <% end %>
+            <%= link_to "ログアウト", destroy_user_session_path,method: :delete, class: :nav__logout %>
+            <%= link_to "投稿", new_post_path, class: :nav__btn %>
         </div>
+          <% else %>
+        <div class="nav__right">
+          <%= link_to "ログイン", user_session_path, class: :nav__btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
         </div>
+          <% end %>
+            
+        <div class="nav__left">
+          <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+          <% end %>
+        </div>
+      </div>
         
-
-        
-      
-
     </header>
        <%= yield %>
     <footer class="footer">

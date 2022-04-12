@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
   end
-  
+
   describe 'ユーザー新規登録' do
     context '新規登録出来る時'
     it '必要なユーザー情報が全て存在すれば登録できる' do
@@ -15,25 +15,25 @@ RSpec.describe User, type: :model do
     it 'emailが空では登録できない' do
       @user.email = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("Eメールを入力してください")
+      expect(@user.errors.full_messages).to include('Eメールを入力してください')
     end
 
     it 'passwordが空では登録できない' do
       @user.password = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("パスワードを入力してください", "パスワードは不正な値です", "パスワード（確認用）とパスワードの入力が一致しません")
+      expect(@user.errors.full_messages).to include('パスワードを入力してください', 'パスワードは不正な値です', 'パスワード（確認用）とパスワードの入力が一致しません')
     end
 
     it 'nicknameが空では登録できない' do
       @user.nickname = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+      expect(@user.errors.full_messages).to include('ニックネームを入力してください')
     end
 
     it 'プロフィールが空では登録できない' do
       @user.profile = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("プロフィールを入力してください")
+      expect(@user.errors.full_messages).to include('プロフィールを入力してください')
     end
 
     it 'emailは@を含まないと登録できない' do
@@ -53,7 +53,7 @@ RSpec.describe User, type: :model do
     it 'passwordとpassword_confirmationが不一致では登録できない' do
       @user.password_confirmation = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+      expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
     end
 
     it 'passwordは6文字以上でないと登録できない' do
@@ -94,14 +94,13 @@ RSpec.describe User, type: :model do
     it 'nicknameが20文字以上では登録できない' do
       @user.nickname = 'a' * 21
       @user.valid?
-      expect(@user.errors.full_messages).to include("ニックネームは20文字以内で入力してください")
+      expect(@user.errors.full_messages).to include('ニックネームは20文字以内で入力してください')
     end
 
     it 'プロフィールが200以上では登録できない' do
       @user.profile = 'a' * 201
       @user.valid?
-      expect(@user.errors.full_messages).to include("プロフィールは200文字以内で入力してください")
+      expect(@user.errors.full_messages).to include('プロフィールは200文字以内で入力してください')
     end
-
   end
 end

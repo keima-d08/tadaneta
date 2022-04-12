@@ -2,50 +2,51 @@ require 'rails_helper'
 
 RSpec.describe Relationship, type: :model do
   before do
-    @relationship= FactoryBot.create(:relationship)
+    @relationship = FactoryBot.create(:relationship)
   end
 
   describe 'フォロー機能' do
-    
-    context "フォローできる場合" do
-      it "全てのパラメーターが揃っていればフォローできる" do
+    context 'フォローできる場合' do
+      it '全てのパラメーターが揃っていればフォローできる' do
         expect(@relationship).to be_valid
       end
     end
 
-    context "フォローできない場合" do
-      it "follower_idが空の場合は保存できない" do
-        @relationship.follower_id = ""
+    context 'フォローできない場合' do
+      it 'follower_idが空の場合は保存できない' do
+        @relationship.follower_id = ''
         @relationship.valid?
-        expect(@relationship.errors.full_messages).to include("Followerを入力してください", "Followerを入力してください")
+        expect(@relationship.errors.full_messages).to include('Followerを入力してください', 'Followerを入力してください')
       end
 
-      it "followed_idが空の場合は保存できない" do
-        @relationship.followed_id = ""
+      it 'followed_idが空の場合は保存できない' do
+        @relationship.followed_id = ''
         @relationship.valid?
-        expect(@relationship.errors.full_messages).to include("Followedを入力してください", "Followedを入力してください")
+        expect(@relationship.errors.full_messages).to include('Followedを入力してください', 'Followedを入力してください')
       end
     end
 
-    context "一意性の検証" do
-
+    context '一意性の検証' do
       before do
         @another_user = FactoryBot.build(:relationship)
       end
 
-      it "follower_idとfollowed_idの組み合わせは一意でなければ保存できない" do
-        @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id, followed_id: @relationship.followed_id)
+      it 'follower_idとfollowed_idの組み合わせは一意でなければ保存できない' do
+        @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id,
+                                                            followed_id: @relationship.followed_id)
         @another_relation.valid?
-        expect(@another_relation.errors.full_messages).to include("Followerはすでに存在します")
+        expect(@another_relation.errors.full_messages).to include('Followerはすでに存在します')
       end
 
-      it "follower_idが同じでもfollowed_idが違うなら保存できる" do
-        @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id, followed_id: @another_user.followed_id)
+      it 'follower_idが同じでもfollowed_idが違うなら保存できる' do
+        @another_relation = FactoryBot.build(:relationship, follower_id: @relationship.follower_id,
+                                                            followed_id: @another_user.followed_id)
         expect(@another_relation).to be_valid
       end
 
-      it "follower_idが違うならfollowed_idが同じでも保存できる" do
-        @another_relation = FactoryBot.build(:relationship, follower_id: @another_user.follower_id, followed_id: @relationship.followed_id)
+      it 'follower_idが違うならfollowed_idが同じでも保存できる' do
+        @another_relation = FactoryBot.build(:relationship, follower_id: @another_user.follower_id,
+                                                            followed_id: @relationship.followed_id)
         expect(@another_relation).to be_valid
       end
     end
