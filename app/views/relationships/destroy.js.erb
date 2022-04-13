@@ -1,1 +1,2 @@
 document.getElementById('follow-ajax').innerHTML = ("<%= j(render partial: 'relationships/follow', locals: { user: @user }) %>")
+document.getElementById('follower_count').innerHTML = ("<%= j(render partial: 'relationships/follower_count', locals: { follower_count: @follower_count }) %>")

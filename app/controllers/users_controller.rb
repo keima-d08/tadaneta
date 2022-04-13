@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     @following_users = @user.following_user
     @follower_users = @user.follower_user
     # //
+
+    # /カウント機能非同期の為
+    @follower_count = @follower_users.count
+    # //
   end
 
   # フォロー一覧ページ

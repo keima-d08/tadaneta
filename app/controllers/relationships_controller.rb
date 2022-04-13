@@ -4,6 +4,10 @@ class RelationshipsController < ApplicationController
     # /非同期実装の為の記述
     @user = User.find(params[:user_id])
     # //
+
+    # /カウント機能非同期の為
+    @follower_count =  @user.follower_user.count
+    # //
   end
 
   def destroy
@@ -11,5 +15,11 @@ class RelationshipsController < ApplicationController
     # /非同期実装の為の記述
     @user = User.find(params[:user_id])
     # //
+
+    # /カウント機能非同期の為
+    @follower_count = @user.follower_user.count
+    # //
   end
+    
+
 end

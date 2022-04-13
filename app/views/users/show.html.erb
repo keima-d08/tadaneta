@@ -23,12 +23,12 @@
          フォロー <%= @following_users.count %>
           <% end %>
          </div>
-        
-        <div class= "follower">
-        <%= link_to followers_user_path(@user),class:"follower" do %>
-        フォロワー <%= @follower_users.count %>
-        <% end %>
+
+        <%# フォロワー数は非同期/ %>
+        <div class= "follower" id = follower_count>
+          <%= render "relationships/follower_count", remot: true, locals: { follow_count: @follower_count } %>
         </div>
+        <%# // %>
         
      
         <div class= "post_count">

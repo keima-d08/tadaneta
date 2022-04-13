@@ -13,14 +13,16 @@
         <div class= follow_name>
           <%= link_to user.nickname,user_path(user.id), class: "follow_name" %>
         </div>
-
-        <div class= "user_follow">
-          <% if user_signed_in? && current_user != user %>
-            <div id="follow-ajax">
-              <%= render "relationships/follow", remot: true, locals: { user: @user } %>
-        </div>
-          <% end %>
-      </div>
+        
+        <%# 実装中/ %>
+        <%#<div class= "user_follow">
+          <%#<% if user_signed_in? && current_user != user %>
+            <%#<div< id="follow-ajax">
+              <%#<%= render "relationships/follow", remot: true, locals: { user: @user } %>
+            <%#</div>
+          <%#<% end %>
+        <%#</div>
+        <%# // %>
 
     </div>
     <% end %>
