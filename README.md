@@ -25,18 +25,29 @@
   
 # 利用方法
 ### 記事投稿
- 1 トップページからユーザー新規登録または既存ユーザーでログインを行う
+ 1 トップページからユーザー新規登録または既存ユーザーでログインを行う。
+ 2 ログイン後、投稿ボタンから投稿内容（タイトル、作品名、中身の種類とタイプ、ネタバレ度、本文、画像は任意）を記入して投稿する。
+ 3 投稿後、自分の記事を編集、削除することが可能。
 
- 2 ログイン後投稿ボタンから投稿内容（タイトル、作品名、中身の種類とタイプ、ネタバレ度、本文、画像は任意）を記入して投稿する
+ 
+### コメント
+ 1 ログイン状態の場合は投稿詳細下部から記事にコメントすることが可能。
+ 2 自分のコメントは削除することが可能
 
- 3 他のユーザーの気に入った記事にはいいねを押しておけば、後ほどいいね一覧ページから見直すことができる
+### 投稿記事検索
+ 1 ヘッダー内、検索フォームより投稿記事の検索を行うことができる。
 
- 4 記事に対して意見や質問があるときは記事詳細ページ下部よりコメントをすることができる
+### ユーザー管理
+ 1 ユーザー新規登録後、ヘッダー右上部のアイコンからマイページに遷移することができる。
+ 2 新規登録後、マイページのユーザー情報の編集を行うことができる。
 
- 5 ヘッダー内の検索フォームから記事を検索することができる
+### いいね
+ 1 ログイン状態の場合は他のユーザーの記事にいいねを押すことができる。
+ 2 いいねを押した記事はユーザー詳細ページから確認することができる。
 
-### ユーザーコミュニケーション
- 1 ログイン状態では、ユーザー詳細ページから他のユーザーをフォローすることができる
+### ユーザーフォロー
+ 1 ログイン状態の場合は自分以外のユーザーをフォローすることができる。
+ 2 フォローしているユーザー、フォローされているユーザーはユーザー詳細ページから確認することができる。
 
 
 # アプリケーションを作成した背景
@@ -74,13 +85,13 @@
 | profile            | text        |  null: false                       |
 
 ### Association
-- has_many :posts
-- has_many :comments
-- has_many :favorites
-- has_many :follower, class_name: "Relationship"
-- has_many :followed, class_name: "Relationship"
-- has_many :following_user, through: :follower, source: :followed
-- has_many :follower_user, through: :followed, source: :follower
+ - has_many :posts
+ - has_many :comments
+ - has_many :favorites
+ - has_many :follower, class_name: "Relationship"
+ - has_many :followed, class_name: "Relationship"
+ - has_many :following_user, through: :follower, source: :followed
+ - has_many :follower_user, through: :followed, source: :follower
 
 
 ## postsテーブル
@@ -95,9 +106,9 @@
 | user               | references  |  null: false, foreign_key: true   |
 
 ### Association
-- belongs_to :user
-- has_many :comments
-- has_many :favorites
+ - belongs_to :user
+ - has_many :comments
+ - has_many :favorites
 
 ## commentsテーブル
 
@@ -108,8 +119,8 @@
 | user               | references  |  null: false, foreign_key: true   |
 
 ### Association
-- belongs_to :user
-- belongs_to :post
+ - belongs_to :user
+ - belongs_to :post
 
 ## favoritesテーブル
 
@@ -130,12 +141,12 @@
 | followed           | references  |  null: false, foreign_key: true   |
 
 ### Association
-- belongs_to :follower, class_name: "User"
-- belongs_to :followed, class_name: "User"
+ - belongs_to :follower, class_name: "User"
+ - belongs_to :followed, class_name: "User"
 
 
 # 画面遷移図
- [![Image from Gyazo](https://i.gyazo.com/31078a39e5e956a0bcbdce268b87b7cc.png)](https://gyazo.com/31078a39e5e956a0bcbdce268b87b7cc)
+ [![Image from Gyazo](https://i.gyazo.com/f47f495419d5a538b016a4332c167265.png)](https://gyazo.com/f47f495419d5a538b016a4332c167265)
 
 # 開発環境 使用した言語、サービス
 
@@ -144,13 +155,13 @@
  * HTML/CSS
  * javaScript
 
- ## サーバーサイド
+## サーバーサイド
  ### フレームワーク
  * Ruby_on_rails 6.0.4.7
  ### 使用言語
  * Ruby 2.6.5
  
- ## インフラ環境
+## インフラ環境
  ### サーバー
  * AWS EC2
  ### 外部ストレージ
@@ -158,7 +169,7 @@
  ### データベース
  * Mysql 14.14
 
- ## テスト
+## テスト
  ## RSpecを用いたテスト
  ### 単体テスト
 
@@ -182,11 +193,13 @@
  * bundle exec rspec spec/models/favorite_spec.rb
  [![Image from Gyazo](https://i.gyazo.com/4a861998d874642b4739a4ce7bddcae8.png)](https://gyazo.com/4a861998d874642b4739a4ce7bddcae8)
  
- ## テキストエディタ
+## テキストエディタ
  * Visual Studio Code
 
-
-
-# ローカルでの動作方法 git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記載。
+# ローカルでの動作方法
+ % git clone https://github.com/keima-d08/tadaneta.git
+ % cd tadaneta
+ % bundle install
+ % yarn install
 
 # 工夫したポイント 制作背景・使用技術・開発方法・タスク管理など、企業へＰＲしたい事柄を記載。
