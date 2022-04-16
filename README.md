@@ -142,7 +142,7 @@
 ## フロントサイド
  ### 使用言語
  * HTML/CSS
- * javascript
+ * javaScript
 
  ## サーバーサイド
  ### フレームワーク
@@ -156,113 +156,37 @@
  ### 外部ストレージ
  * AWS S3
  ### データベース
- * Mysql Ver 14.14
+ * Mysql 14.14
 
  ## テスト
  ## RSpecを用いたテスト
  ### 単体テスト
+
  #### userモデル
  * bundle exec rspec spec/models/user_spec.rb 
  [![Image from Gyazo](https://i.gyazo.com/d934dce833820d296def7808b079621e.png)](https://gyazo.com/d934dce833820d296def7808b079621e)
- * 
- * 
- * 
+
+ #### postモデル
+ * bundle exec rspec spec/models/post_spec.rb
+ [![Image from Gyazo](https://i.gyazo.com/6808619e6b4c7123b45a8adaf282da53.png)](https://gyazo.com/6808619e6b4c7123b45a8adaf282da53)
+
+ #### commentモデル
+ * bundle exec rspec spec/models/comment_spec.rb
+ [![Image from Gyazo](https://i.gyazo.com/2a4779afbc9fed18decdefc94cb2b63a.png)](https://gyazo.com/2a4779afbc9fed18decdefc94cb2b63a)
+
+ #### relationshipモデル
+ * bundle exec rspec spec/models/relationship_spec.rb
+ [![Image from Gyazo](https://i.gyazo.com/c032a48dbfe549ddeb6b4a8dc623a7b0.png)](https://gyazo.com/c032a48dbfe549ddeb6b4a8dc623a7b0)
+
+ #### favoriteモデル
+ * bundle exec rspec spec/models/favorite_spec.rb
+ [![Image from Gyazo](https://i.gyazo.com/4a861998d874642b4739a4ce7bddcae8.png)](https://gyazo.com/4a861998d874642b4739a4ce7bddcae8)
+ 
+ ## テキストエディタ
+ * Visual Studio Code
 
 
 
 # ローカルでの動作方法 git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記載。
 
 # 工夫したポイント 制作背景・使用技術・開発方法・タスク管理など、企業へＰＲしたい事柄を記載。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* usersテーブル
-
-| Colum              | Type        | Options                            |
-|--------------------|-------------|------------------------------------|
-| email              | string      |  null: false, unique: true         |
-| encrypted_password | string      |  null: false                       |
-| nickname           | string      |  null: false                       |
-| profile            | text        |  null: false                       |
-
-### Association
-- has_many :posts
-- has_many :comments
-- has_many :favorites
-- has_many :follower, class_name: "Relationship"
-- has_many :followed, class_name: "Relationship"
-- has_many :following_user, through: :follower, source: :followed
-- has_many :follower_user, through: :followed, source: :follower
-
-
-* postsテーブル
-
-| Colum              | Type        | Options                           |
-|--------------------|-------------|-----------------------------------|
-| title              | string      |  null: false                      |
-| product            | string      |  null: false                      |
-| genre_id           | integer     |  null: false                      |
-| type1_id           | integer     |  null: false                      |
-| spoil_id           | integer     |  null: false                      |
-| user               | references  |  null: false, foreign_key: true   |
-
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many :favorites
-
-* commentsテーブル
-
-| Colum              | Type        | Options                           |
-|--------------------|-------------|-----------------------------------|
-| comment            | string      |  null: false                      |
-| post               | references  |  null: false, foreign_key: true   |
-| user               | references  |  null: false, foreign_key: true   |
-
-### Association
-- belongs_to :user
-- belongs_to :post
-
-* favoritesテーブル
-
-| Colum              | Type        | Options                           |
-|--------------------|-------------|-----------------------------------|
-| user               | references  |  null: false, foreign_key: true   |
-| post               | references  |  null: false, foreign_key: true   |
-
-### Association
-- belongs_to :user
-- belongs_to :post
-
-* relationshipsテーブル
-
-| Colum              | Type        | Options                           |
-|--------------------|-------------|-----------------------------------|
-| follower           | references  |  null: false, foreign_key: true   |
-| followed           | references  |  null: false, foreign_key: true   |
-
-### Association
-- belongs_to :follower, class_name: "User"
-- belongs_to :followed, class_name: "User"
