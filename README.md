@@ -90,7 +90,8 @@
    [![Image from Gyazo](https://i.gyazo.com/45a7c6bc96c59b1f336b81b6daead957.gif)](https://gyazo.com/45a7c6bc96c59b1f336b81b6daead957)
   * 新規投稿失敗時
    [![Image from Gyazo](https://i.gyazo.com/e6fe46690186dc7ea4a6dfb6309cb974.gif)](https://gyazo.com/e6fe46690186dc7ea4a6dfb6309cb974)
-  * ドラッグ＆ドロップでの画像挿入機能
+  
+  ## ドラッグ＆ドロップでの画像挿入機能
    [![Image from Gyazo](https://i.gyazo.com/5b087abd3afe9179cd2330ab800e8d62.gif)](https://gyazo.com/5b087abd3afe9179cd2330ab800e8d62)
 
   ## 投稿記事編集機能
