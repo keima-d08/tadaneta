@@ -88,28 +88,39 @@
  ## 記事投稿機能
   * 新規投稿成功時
    [![Image from Gyazo](https://i.gyazo.com/45a7c6bc96c59b1f336b81b6daead957.gif)](https://gyazo.com/45a7c6bc96c59b1f336b81b6daead957)
+
   * 新規投稿失敗時
    [![Image from Gyazo](https://i.gyazo.com/e6fe46690186dc7ea4a6dfb6309cb974.gif)](https://gyazo.com/e6fe46690186dc7ea4a6dfb6309cb974)
   
-  ## ドラッグ＆ドロップでの画像挿入機能
+ ## ドラッグ＆ドロップでの画像挿入機能
    [![Image from Gyazo](https://i.gyazo.com/5b087abd3afe9179cd2330ab800e8d62.gif)](https://gyazo.com/5b087abd3afe9179cd2330ab800e8d62)
 
-  ## 投稿記事編集機能
+ ## 投稿記事編集機能
    [![Image from Gyazo](https://i.gyazo.com/8ec8812568d6c449c6ac72629562f08f.gif)](https://gyazo.com/8ec8812568d6c449c6ac72629562f08f)
 
-  ## 投稿記事削除機能
+ ## 投稿記事削除機能
    [![Image from Gyazo](https://i.gyazo.com/e0555f58ae26f51bc34d97acedc77d3c.gif)](https://gyazo.com/e0555f58ae26f51bc34d97acedc77d3c)
 
-  ## 投稿記事検索機能
+ ## 投稿記事検索機能
    [![Image from Gyazo](https://i.gyazo.com/354f71d0f2e24927bb5f79339af5f55b.gif)](https://gyazo.com/354f71d0f2e24927bb5f79339af5f55b)
+
+ ## コメント機能
+  * コメント投稿成功時
+   [![Image from Gyazo](https://i.gyazo.com/d89dad6e0f5c3e1113d3ebc77838022c.gif)](https://gyazo.com/d89dad6e0f5c3e1113d3ebc77838022c)
+
+  * コメント投稿失敗時
+   [![Image from Gyazo](https://i.gyazo.com/1c3c1d831899c8918f5cb7cd183660bc.gif)](https://gyazo.com/1c3c1d831899c8918f5cb7cd183660bc)
+
+  * コメント削除機能
+   [![Image from Gyazo](https://i.gyazo.com/199dcb3b47dee4f4355c0539351ee2b9.gif)](https://gyazo.com/199dcb3b47dee4f4355c0539351ee2b9)
   
-  ## いいね機能
+ ## いいね機能
    [![Image from Gyazo](https://i.gyazo.com/5ee435733952b1f393f48811f6dd4270.gif)](https://gyazo.com/5ee435733952b1f393f48811f6dd4270)
 
-  ## ユーザーフォロー機能
+ ## ユーザーフォロー機能
    [![Image from Gyazo](https://i.gyazo.com/1369fc5905a35494675834df282964bd.gif)](https://gyazo.com/1369fc5905a35494675834df282964bd)
 
-  ## いいね数ランキング機能
+ ## いいね数ランキング機能
    [![Image from Gyazo](https://i.gyazo.com/5212cac7e52f1313dfb20ac5ac396a48.gif)](https://gyazo.com/5212cac7e52f1313dfb20ac5ac396a48)
 
 # 今後実装予定の機能
