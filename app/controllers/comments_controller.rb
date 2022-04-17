@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@comment.post)
     else
-      
       redirect_back fallback_location: @post
     end
   end
