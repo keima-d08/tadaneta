@@ -66,6 +66,10 @@
 
 # 実装した機能及びその説明
 
+
+
+
+
 # 今後実装予定の機能
  * スマートフォンからも使えるようにするためにビューのレスポンシブデザイン化
  * 検索から2つ以上のキーワードで検索できる機能
@@ -184,22 +188,35 @@
  #### commentモデル
  * bundle exec rspec spec/models/comment_spec.rb
  [![Image from Gyazo](https://i.gyazo.com/2a4779afbc9fed18decdefc94cb2b63a.png)](https://gyazo.com/2a4779afbc9fed18decdefc94cb2b63a)
-
- #### relationshipモデル
- * bundle exec rspec spec/models/relationship_spec.rb
- [![Image from Gyazo](https://i.gyazo.com/c032a48dbfe549ddeb6b4a8dc623a7b0.png)](https://gyazo.com/c032a48dbfe549ddeb6b4a8dc623a7b0)
-
+ 
  #### favoriteモデル
  * bundle exec rspec spec/models/favorite_spec.rb
  [![Image from Gyazo](https://i.gyazo.com/4a861998d874642b4739a4ce7bddcae8.png)](https://gyazo.com/4a861998d874642b4739a4ce7bddcae8)
  
+ #### relationshipモデル
+ * bundle exec rspec spec/models/relationship_spec.rb
+ [![Image from Gyazo](https://i.gyazo.com/c032a48dbfe549ddeb6b4a8dc623a7b0.png)](https://gyazo.com/c032a48dbfe549ddeb6b4a8dc623a7b0)
+
 ## テキストエディタ
  * Visual Studio Code
 
 # ローカルでの動作方法
- % git clone https://github.com/keima-d08/tadaneta.git
- % cd tadaneta
- % bundle install
+ % git clone https://github.com/keima-d08/tadaneta.git<br>
+ % cd tadaneta<br>
+ % bundle install<br>
  % yarn install
 
-# 工夫したポイント 制作背景・使用技術・開発方法・タスク管理など、企業へＰＲしたい事柄を記載。
+# 工夫したポイント
+ * アプリ名、アプリについての紹介文にパロディ要素を入れたり、募集中と書いてある画像をクリックしたら新規投稿ページに遷移したりと気付いたユーザー様がクスッと楽しんでもらえるであろう要素を取り入れております。
+ * 本番環境はポートフォリオではありますが実用的なことを見据えEC2へのデプロイ、外部ストレージにS3を使用しております。
+ 
+ # 開発を通して得た学び、体験、気づき。
+ 開発途中で別のアイディアが出て要件やデータベース設計が変わったりし、想定外の作業発生によるタイムロス。<br>
+ スクールで学んでいない、新しい技術を取り入れたことによるエラー。<br>
+ 期日までに完成させるための優先順位付け、自分の今の技術力で実装が間に合うかどうかの予測、タスク管理の大変さ。<br>
+ と様々な体験を得ることが出来ました。<br>
+ ただ、作成しているときはしんどくなかっと言えば嘘になりますが、辛くは感じませんでした。<br>
+ なので自分自身プログラミングが好きになったと気づくことが出来ました。<br>
+
+
+
