@@ -1,61 +1,44 @@
 <div class="main">
   <div class="main_contents wrapper">
     <article>
-        
-     <div>
+      <div>
       <%= render partial:"post", collection: @posts %>
-    </div>
-    </article>
-
-    <aside>
-
-      <div class="a-head">〜当Webサイトについて〜</div >
-
-     <div class="a-content">
-      この作品の理解を深めたい！！<br>
-      この作品に対する評価が気になる！！<br>
-      この作品への自分の解釈がどう思われるのか気になる！！<br>
-      他の人の解釈を見て作品への知見を広げたい！！<br>
-      とにかく作品への愛を語りたいでもTwitterの140文字じゃこの気持ちは抑えられない！！<br>
-
-      ここはそういう気持ちを持った宇宙人、未来人、異世界人、超能力者、
-      ご主人様、お嬢様、紳士、淑女、お兄ちゃん、お姉ちゃん、
-      妹、弟、パパ、ママ、おじいちゃん、おばあちゃんの為の場所です。<br>
-      
-      <div class=a-text>ただのネタバレには興味ありません。</div>
-
-      愛や知識のこもった投稿をお待ちしております。<br>
-      
-      
       </div>
-
-     <div>
-      <%= link_to image_tag('tadaneta1.png'),  new_post_path %>
-    </div>
-
-  <div class="ranking">
-  <div class="rank_head"> 人気投稿ランキング </div>
-
-    <% @all_ranks.each.with_index(1) do |post, i| %>
-
-
-   <div class=rank-num>第<%= i %>位</div>
-  <div class = "post.date">
- <%= link_to post.user.nickname, user_path(post.user.id), class:"user" %>
- が<%= post.created_at.strftime('%Y年/%m月/%d日') %>に投稿
- </div>
-  <div class="rank_title">
-    <%= link_to post.title, post_path(post.id),class:"rank_title"%>
-    </div>
-    ・<%= post.product %>
-    ・<%= post.genre.name %>
-    <div>・<%= post.type.name %></div>
-    <div>・ネタバレ度<%= post.spoil.name %></div>
-  <% end %>
-
- </div>
-
+    </article>
+    <aside>
+      <div class="a-head">〜当Webサイトについて〜</div >
+      <div class="a-content">
+        この作品の理解を深めたい！！<br>
+        この作品に対する評価が気になる！！<br>
+        この作品への自分の解釈がどう思われるのか気になる！！<br>
+        他の人の解釈を見て作品への知見を広げたい！！<br>
+        とにかく作品への愛を語りたいでもTwitterの140文字じゃこの気持ちは抑えられない！！<br>
+        ここはそういう気持ちを持った宇宙人、未来人、異世界人、超能力者、
+        ご主人様、お嬢様、紳士、淑女、お兄ちゃん、お姉ちゃん、
+        妹、弟、パパ、ママ、おじいちゃん、おばあちゃんの為の場所です。<br>
+        <div class=a-text>ただのネタバレには興味ありません。</div>
+        愛や知識のこもった投稿をお待ちしております。<br>
+      </div>
+      <div>
+        <%= link_to image_tag('tadaneta1.png'),  new_post_path %>
+      </div>
+      <div class="ranking">
+        <div class="rank_head"> 人気投稿ランキング </div>
+        <% @all_ranks.each.with_index(1) do |post, i| %>
+          <div class=rank-num>第<%= i %>位</div>
+          <div class = "post.date">
+            <%= link_to post.user.nickname, user_path(post.user.id), class:"user" %>
+            が<%= post.created_at.strftime('%Y年/%m月/%d日') %>に投稿
+          </div>
+          <div class="rank_title">
+            <%= link_to post.title, post_path(post.id),class:"rank_title"%>
+          </div>
+          ・<%= post.product %>
+          ・<%= post.genre.name %>
+          <div>・<%= post.type.name %></div>
+          <div>・ネタバレ度<%= post.spoil.name %></div>
+        <% end %>
+      </div>
     </aside>
-
   </div>
 </div>

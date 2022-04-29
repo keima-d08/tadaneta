@@ -7,24 +7,24 @@
   </div>
 
   <div class="field">
-   <%= f.label :product, "作品名" %><br />
-   <%= f.text_field :product, id:"post_product" %>
+    <%= f.label :product, "作品名" %><br />
+    <%= f.text_field :product, id:"post_product" %>
   </div>
 
-<div class="genre">
- <div>ジャンル</div>
-  <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}) %>
-</div>
+  <div class="genre">
+    <div>ジャンル</div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}) %>
+  </div>
 
-<div class="type">
- <div>タイプ</div>
- <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
-</div>
+  <div class="type">
+    <div>タイプ</div>
+    <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
+  </div>
 
-<div class="spoile">
- <div >ネタバレ度</div>
- <%= f.collection_select(:spoil_id, Spoil.all, :id, :name, {}) %>
-</div>
+  <div class="spoile">
+    <div >ネタバレ度</div>
+    <%= f.collection_select(:spoil_id, Spoil.all, :id, :name, {}) %>
+  </div>
 
   <div class="field">
     <%= f.label :content, "本文" %><br />
