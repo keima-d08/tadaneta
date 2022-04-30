@@ -1,74 +1,55 @@
 <div class="main">
-    <div class="user_show">
-     <div class = "user_date">
-
+  <div class="user_show">
+    <div class = "user_date">
       <div class= "user_nickname">
         <%= @user.nickname%>
       </div>
-
       <% if user_signed_in? && current_user.id == @user.id %>
-      <div class= "profile_edit">
+        <div class= "profile_edit">
         <%= link_to "プロフィールを編集",  edit_user_registration_path(@user.id), class: :post_btn %>
-      </div>
+        </div>
       <% end %>
-      
-       <div class= "user_profile" >
-         <%= @user.profile %>
-       </div>
-      
+      <div class= "user_profile" >
+        <%= @user.profile %>
+      </div>
       <div class= "user_follows">
-
         <div class= "follow" >
-           <%= link_to follows_user_path(@user),class:"follow" do %>
-         フォロー <%= @following_users.count %>
-          <% end %>
-         </div>
-
-        <%# フォロワー数は非同期/ %>
-        <div class= "follower" id = follower_count>
-          <%= render "relationships/follower_count", remot: true, locals: { follow_count: @follower_count } %>
-        </div>
-        <%# // %>
-        
-     
-        <div class= "post_count">
-         投稿 <%= @user.posts.count %>
-         </div>
-
-         <div class= "favorites_count">
-         <%= link_to favorites_user_path(@user),class:"follower" do %>
-         いいね <%= @user.favorites.count %>
-          <% end %>
-         </div>
-        
-     </div>
-    
-   <div class= "user_followed">
-     <% if user_signed_in? && current_user != @user %>
-         <div id="follow-ajax">
-            <%= render "relationships/follow", remot: true, locals: { user: @user } %>
-          </div>
+          <%= link_to follows_user_path(@user),class:"follow" do %>
+          フォロー <%= @following_users.count %>
         <% end %>
-        </div>
+      </div>
+      <div class= "follower" id = follower_count>
+        <%= render "relationships/follower_count", remot: true, locals: { follow_count: @follower_count } %>
+      </div>
+      <div class= "post_count">
+        投稿 <%= @user.posts.count %>
+      </div>
+      <div class= "favorites_count">
+        <%= link_to favorites_user_path(@user),class:"follower" do %>
+          いいね <%= @user.favorites.count %>
+        <% end %>
+      </div>
     </div>
-
-
-
-      <div class=user_image>
-      <% if @user.image.attached? %>
-       <%= image_tag @user.image, class: :circle%>
+    <div class= "user_followed">
+      <% if user_signed_in? && current_user != @user %>
+        <div id="follow-ajax">
+          <%= render "relationships/follow", remot: true, locals: { user: @user } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class=user_image>
+    <% if @user.image.attached? %>
+      <%= image_tag @user.image, class: :circle%>
       <% else %>
-       <%= image_tag "icon.png",class: :circle %>
-        <% end %>
-       </div>
-     </div>
-
-
-      <div class= user_post>
-       <div class= post_list><h2>
-        <%= @user.nickname %>さんの投稿
-       </h2></div>
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+      <%= image_tag "icon.png",class: :circle %>
+    <% end %>
+  </div>
+</div>
+<div class= user_post>
+  <div class= post_list>
+    <h2><%= @user.nickname %>さんの投稿</h2>
+      </div>
         <%= render partial: "posts/post", collection: @posts %>
       </div>
   <div>　</div>
